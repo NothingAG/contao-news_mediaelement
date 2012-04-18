@@ -41,7 +41,7 @@ $GLOBALS['TL_DCA']['tl_news']['subpalettes']['addVideo']		= 'video_headline,mejs
 
 foreach($GLOBALS['TL_DCA']['tl_news']['palettes'] as $k => $v)
 {
-    $GLOBALS['TL_DCA']['tl_news']['palettes'][$k] = str_replace('addEnclosure;', '{video_legend:hide},addVideo;addEnclosure', $GLOBALS['TL_DCA']['tl_news']['palettes'][$k]);
+    $GLOBALS['TL_DCA']['tl_news']['palettes'][$k] = str_replace('{enclosure_legend:hide}', '{video_legend:hide},addVideo;{enclosure_legend:hide}', $GLOBALS['TL_DCA']['tl_news']['palettes'][$k]);
 }
 
 /**
