@@ -52,6 +52,6 @@ $objGallery = new NewsGallery($this);
 echo $objGallery->generate();
 endif; ?>
 <?php if ($this->addVideo):
-$objVideo = new NewsMediaElement($this);
+$objVideo = new NewsMediaElementYouTube($this);
 echo $objVideo->generate();
 endif; ?>

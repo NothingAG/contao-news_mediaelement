@@ -26,7 +26,7 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
-class NewsMediaElement extends ContentMediaElementYouTube
+class NewsMediaElementYouTube extends ContentMediaElementYouTube
 {
     public function __construct($objTemplate)
     {
