@@ -21,24 +21,26 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Andreas Schempp 2011
+ * @copyright  Nothing Interactive 2012 <https://www.nothing.ch/>
  * @author     Stefan Pfister <red@nothing.ch>
+ * @author     Andreas Schempp <andreas@schempp.ch>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
 class NewsMediaElementYouTube extends ContentMediaElementYouTube
 {
-    public function __construct($objTemplate)
-    {
-        // Default values (not available in news video)
-        $this->id = $objTemplate->id;
-        $this->type = 'news_video';
 
-        // Apply news video settings
-        $arrHeadline = deserialize($objTemplate->video_headline);
-        $this->headline = is_array($arrHeadline) ? $arrHeadline['value'] : $arrHeadline;
-        $this->hl = is_array($arrHeadline) ? $arrHeadline['unit'] : 'h1';
-        $this->mejs_youtube = $objTemplate->mejs_youtube;
-        $this->mejs_size = $objTemplate->mejs_size;
-    }
+	public function __construct($objTemplate)
+	{
+		// Default values (not available in news video)
+		$this->id = $objTemplate->id;
+		$this->type = 'news_video';
+
+		// Apply news video settings
+		$arrHeadline = deserialize($objTemplate->video_headline);
+		$this->headline = is_array($arrHeadline) ? $arrHeadline['value'] : $arrHeadline;
+		$this->hl = is_array($arrHeadline) ? $arrHeadline['unit'] : 'h1';
+		$this->mejs_youtube = $objTemplate->mejs_youtube;
+		$this->mejs_size = $objTemplate->mejs_size;
+	}
 }

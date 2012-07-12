@@ -21,8 +21,9 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Nothing GmbH 2012
+ * @copyright  Nothing Interactive 2012 <https://www.nothing.ch/>
  * @author     Stefan Pfister <red@nothing.ch>
+ * @author     Andreas Schempp <andreas@schempp.ch>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
@@ -39,7 +40,7 @@ $GLOBALS['TL_DCA']['tl_news']['list']['sorting']['child_record_callback'] = arra
 $GLOBALS['TL_DCA']['tl_news']['palettes']['__selector__'][] = 'addVideo';
 $GLOBALS['TL_DCA']['tl_news']['subpalettes']['addVideo'] = 'video_headline,mejs_youtube,mejs_size';
 
-foreach($GLOBALS['TL_DCA']['tl_news']['palettes'] as $k => $v)
+foreach ($GLOBALS['TL_DCA']['tl_news']['palettes'] as $k => $v)
 {
 	$GLOBALS['TL_DCA']['tl_news']['palettes'][$k] = str_replace('{enclosure_legend:hide}', '{video_legend:hide},addVideo;{enclosure_legend:hide}', $GLOBALS['TL_DCA']['tl_news']['palettes'][$k]);
 }
@@ -53,7 +54,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['addVideo'] = array
 	'exclude'                 => true,
 	'filter'                  => true,
 	'inputType'               => 'checkbox',
-	'eval'                    => array('submitOnChange'=> true)
+	'eval'                    => array('submitOnChange'=>true)
 );
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['video_headline'] = array
@@ -62,7 +63,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['video_headline'] = array
 	'exclude'                 => true,
 	'inputType'               => 'inputUnit',
 	'options'                 => array('h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
-	'eval'                    => array('maxlength'=> 255),
+	'eval'                    => array('maxlength'=>255),
 );
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['mejs_size'] = array
@@ -70,7 +71,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['mejs_size'] = array
 	'label'            => &$GLOBALS['TL_LANG']['tl_news']['mejs_size'],
 	'exclude'          => true,
 	'inputType'        => 'text',
-	'eval'             => array('mandatory'=>true,'multiple'=>true,'size'=>2,'maxlength'=>10),
+	'eval'             => array('mandatory'=>true, 'multiple'=>true, 'size'=>2,	'maxlength'=>10),
 );
 
 $GLOBALS['TL_DCA']['tl_news']['fields']['mejs_youtube'] = array
@@ -78,7 +79,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['mejs_youtube'] = array
 	'label'            => &$GLOBALS['TL_LANG']['tl_news']['mejs_youtube'],
 	'exclude'          => true,
 	'inputType'        => 'text',
-	'eval'             => array('mandatory'=>true,'maxlength'=>16,'tl_class'=>'w50'),
+	'eval'             => array('mandatory'=>true, 'maxlength'=>16, 'tl_class'=>'w50'),
 );
 
 class tl_news_video extends Backend
@@ -90,11 +91,10 @@ class tl_news_video extends Backend
 		$key = ($arrRow['published'] && ($arrRow['start'] == '' || $arrRow['start'] < $time) && ($arrRow['stop'] == '' || $arrRow['stop'] > $time)) ? 'published' : 'unpublished';
 		$date = $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $arrRow['date']);
 
-		return '
-<div class="cte_type ' . $key . '"><strong>' . $arrRow['headline'] . '</strong> - ' . $date . ($arrRow['addGallery'] ? ' <img src="system/modules/newsgallery/html/images.png" alt="" style="position:absolute; margin-left:10px" />' : '') . ($arrRow['addVideo'] ? ' <img src="system/modules/newsmediaelement/html/video.png" alt="Video" style="position:absolute; margin-left:' . ($arrRow['addGallery'] ? '30px' : '10px') . '" />' : '') . '</div>
-<div class="limit_height' . (!$GLOBALS['TL_CONFIG']['doNotCollapse'] ? ' h64' : '') . '">
-' . (($arrRow['text'] != '') ? $arrRow['text'] : $arrRow['teaser']) . '
-</div>' . "\n";
+		return '<div class="cte_type ' . $key . '"><strong>' . $arrRow['headline'] . '</strong> - ' . $date . ($arrRow['addGallery'] ? ' <img src="system/modules/newsgallery/html/images.png" alt="" style="position:absolute; margin-left:10px" />' : '') . ($arrRow['addVideo'] ? ' <img src="system/modules/newsmediaelement/html/video.png" alt="Video" style="position:absolute; margin-left:' . ($arrRow['addGallery'] ? '30px' : '10px') . '" />' : '') . '</div>
+				<div class="limit_height' . (!$GLOBALS['TL_CONFIG']['doNotCollapse'] ? ' h64' : '') . '">
+				' . (($arrRow['text'] != '') ? $arrRow['text'] : $arrRow['teaser']) . '
+				</div>' . "\n";
 	}
 
 }

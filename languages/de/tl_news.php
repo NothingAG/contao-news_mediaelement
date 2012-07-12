@@ -21,7 +21,8 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Andreas Schempp 2009-2012
+ * @copyright  Nothing Interactive 2012 <https://www.nothing.ch/>
+ * @author     Stefan Pfister <red@nothing.ch>
  * @author     Andreas Schempp <andreas@schempp.ch>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
@@ -29,14 +30,23 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_news']['addVideo']           = array('Ein Video einfügen', 'Wenn Sie diese Option wählen, wird dem Beitrag ein Video hinzugefügt.');
-$GLOBALS['TL_LANG']['tl_news']['video_headline']    = array('Video-Überschrift', 'Wenn Sie eine Überschrift eingeben, wird sie oberhalb des Videos angezeigt.');
-$GLOBALS['TL_LANG']['tl_news']['mejs_size']         = array('Player-Grösse', 'Bitte geben Sie die Breite und Höhe des Audio- oder Video-Players ein.');
-$GLOBALS['TL_LANG']['tl_news']['mejs_youtube']      = array('YouTube ID', 'Geben Sie die ID des YouTube-Videos ein. Sie finden diesen in einer normalen YouTube-URL als Parameter v=xxx');
+$GLOBALS['TL_LANG']['tl_news']['addVideo'] = array(
+	'Ein Video einfügen', 'Wenn Sie diese Option wählen, wird dem Beitrag ein Video hinzugefügt.'
+);
+$GLOBALS['TL_LANG']['tl_news']['video_headline'] = array(
+	'Video-Überschrift', 'Wenn Sie eine Überschrift eingeben, wird sie oberhalb des Videos angezeigt.'
+);
+$GLOBALS['TL_LANG']['tl_news']['mejs_size'] = array(
+	'Player-Grösse', 'Bitte geben Sie die Breite und Höhe des Audio- oder Video-Players ein.'
+);
+$GLOBALS['TL_LANG']['tl_news']['mejs_youtube'] = array(
+	'YouTube ID',
+	'Geben Sie die ID des YouTube-Videos ein. Sie finden diesen in einer normalen YouTube-URL als Parameter v=xxx'
+);
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_news']['video_legend']	    = 'Artikel-Video';
+$GLOBALS['TL_LANG']['tl_news']['video_legend'] = 'Artikel-Video';
 
 
