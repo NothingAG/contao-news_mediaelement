@@ -1,3 +1,6 @@
+# [UNMAINTAINED]
+This project is not maintained anymore.
+
 # CONTAO EXTENSION: NEWS MEDIA ELEMENT
 Video support within news articles: Extends the news article with additional fields to include a video into your news articles. You can define a headline, the YouTube ID and the player size. This extension makes use of the `MediaElement.js`.
 
